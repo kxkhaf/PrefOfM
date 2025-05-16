@@ -1,0 +1,85 @@
+﻿.result-card {
+    background-color: white;
+    border: 3px solid #000;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 8px 8px 0 #000;
+}
+
+.song-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.song-artist {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.song-card:hover .song-title,
+.song-card:hover .song-artist {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+}
+
+.song-emotion {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.play-btn {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 0.008rem 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.play-btn:hover {
+    background-color: #333;
+}
+
+.spin-animation {
+    animation: spin 1s linear infinite;
+    will-change: transform;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
+}
+
+.spin-animation {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner {
+    opacity: 0;
+    animation: fadeIn 1s ease-in 1s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}

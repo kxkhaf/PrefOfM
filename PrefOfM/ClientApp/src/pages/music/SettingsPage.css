@@ -1,0 +1,357 @@
+﻿.settings-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.settings-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #000;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.3rem 0.3rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.back-btn:hover {
+    color: #1DB954;
+}
+
+.settings-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.settings-card {
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0 #000;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.settings-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #000;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+    margin-bottom: 1.5rem;
+}
+
+.info-row span {
+    color: #666;
+}
+
+.info-row strong {
+    font-weight: 500;
+}
+
+.section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.section-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.edit-btn {
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #000;
+    transition: all 0.2s ease;
+}
+
+.edit-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 #000;
+}
+
+.current-value {
+    font-size: 0.95rem;
+    color: #333;
+    padding: 0.5rem 0;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.edit-form input {
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.edit-form input:focus {
+    outline: none;
+    border-color: #1DB954;
+    box-shadow: 0 0 0 2px rgba(29, 185, 84, 0.2);
+}
+
+.form-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    justify-content: flex-end;
+}
+
+.cancel-btn {
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cancel-btn:hover {
+    background: #f0f0f0;
+}
+
+.save-btn {
+    background: #1DB954;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.save-btn:hover {
+    background: #18a74a;
+}
+
+.save-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    background: #ccc;
+}
+
+.error {
+    color: #ff3333;
+    font-size: 0.8rem;
+    margin-top: -0.5rem;
+}
+
+.success {
+    color: #1DB954;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.password-requirements {
+    background: #f8f8f8;
+    padding: 0.8rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    border: 1px solid #eee;
+}
+
+.password-requirements ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.requirement-error {
+    color: #ff3333;
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+    list-style-type: disc;
+}
+
+.btn-loading {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+.logout-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.logout-btn {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logout-btn:hover {
+    background: #ff5252;
+}
+
+.logout-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    background: #ff9e9e;
+}
+
+.logout-all-btn {
+    background: #ff9e9e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logout-all-btn:hover {
+    background: #ff8a8a;
+}
+
+.logout-all-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    background: #ffbdbd;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 480px) {
+    .settings-container {
+        padding: 0.8rem;
+    }
+
+    .settings-card {
+        padding: 1rem;
+    }
+
+    .info-row, .current-value {
+        font-size: 0.9rem;
+    }
+
+    .section-header h3 {
+        font-size: 1rem;
+    }
+
+    .edit-btn {
+        padding: 0.3rem 0.7rem;
+        font-size: 0.8rem;
+    }
+
+    .edit-form input {
+        padding: 0.5rem;
+    }
+
+    .cancel-btn, .save-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .logout-btn, .logout-all-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+.confirmation-status {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.confirmation-status h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.confirmation-status p {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+    display: block;
+    margin: 0 auto 1rem;
+}

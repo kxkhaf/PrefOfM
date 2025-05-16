@@ -1,0 +1,226 @@
+﻿.playlists-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #000;
+    text-align: center;
+}
+
+.playlists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.playlist-card {
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 4px 4px 0 #000;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    width: calc(100vw - 40vmax);
+    max-width: 80%;
+    justify-content: flex-end;
+    position: relative;
+    min-height: 150px;
+    margin-bottom: 40px;
+}
+
+.playlist-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0 #000;
+}
+
+.playlist-info {
+    margin-bottom: 1rem;
+}
+
+.playlist-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.playlist-count {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.loading-spinner {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+}
+
+.playlists-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0 #000;
+    width: calc(100vw - 35vmax);
+}
+
+.playlists-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #000;
+    text-align: center;
+    font-weight: 700;
+}
+
+.playlist-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.playlist0play-button {
+    background: #000;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    align-self: flex-start;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.playlist0play-button:hover {
+    background: #333;
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+}
+
+.loading-spinner {
+    color: #666;
+}
+
+.error-message {
+    color: #ff3333;
+    text-align: center;
+    padding: 2rem;
+    font-weight: 600;
+}
+
+.create-playlist-form {
+    width: 100%;
+}
+
+.playlist-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.playlist-textarea {
+    min-height: 60px;
+    resize: vertical;
+}
+
+.create-playlist-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.create-playlist-form {
+    width: 100%;
+}
+
+.playlist-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.playlist-textarea {
+    min-height: 50px;
+    resize: vertical;
+}
+
+.create-playlist-actions {
+    display: flex;
+    gap: 10px;
+    overflow: revert;
+}
+
+.playlist-description {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.playlist-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.playlist0play-button {
+    flex: 0;
+    margin: 0 4px !important;
+}
+
+.playlist0play-button:first-child {
+    margin-left: 0;
+}
+
+.playlist0play-button:last-child {
+    margin-right: 0;
+}
+
+
+
+.playlist-description-hover {
+    position: absolute;
+    left: 0;
+    width: 80%;
+    align-content: center;
+    padding: 10px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 4px 4px 0 #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    transform: translateY(-10px);
+    top: calc(100% - 10px);
+    border-top: none;
+    z-index: 10;
+}
+
+.playlist-card:hover .playlist-description-hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.playlist-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0 #000;
+    z-index: 20;
+}
+
+.playlist-card:hover .playlist-description-hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}

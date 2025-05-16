@@ -1,0 +1,130 @@
+﻿.profile-page {
+    max-width: 450px;
+    margin: 1rem auto;
+    padding: 0.5rem;
+    color: #000000;
+}
+
+.profile-card {
+    background: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    box-shadow: 3px 3px 0 #000000;
+    padding: 1.2rem;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #b7ff00;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.profile-header h2 {
+    margin: 0.3rem 0;
+    font-size: 1.2rem;
+}
+
+.email {
+    color: #666666;
+    font-size: 0.75rem;
+    margin-bottom: 0.8rem;
+}
+
+.profile-info {
+    margin: 0.8rem 0;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    padding: 0.2rem 0;
+}
+
+.info-row span:first-child {
+    color: #666666;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 0.8rem 0;
+    padding: 0.6rem 0;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+
+.stat-value {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.stat-label {
+    font-size: 0.65rem;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.2rem;
+}
+
+.profile-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.8rem;
+}
+
+.edit-button {
+    background: #000000;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.edit-button:hover {
+    background: #333333;
+}
+
+.loading, .error {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.error {
+    color: #ff3333;
+}
+
+@media (max-width: 480px) {
+    .profile-page {
+        padding: 0.3rem;
+    }
+    .profile-card {
+        padding: 1rem;
+    }
+}

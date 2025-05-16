@@ -1,0 +1,131 @@
+﻿.header-logo {
+    background-color: #ffffff;
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border: 2px solid #333;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.logo-scroller {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: scrollLogos 250s linear infinite;
+    will-change: transform;
+}
+
+.logotype {
+    display: inline-block;
+    padding: 0 2.5rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    -webkit-text-stroke: 0.7px #333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    letter-spacing: -0.5px;
+}
+
+.logotype:hover {
+    transform: scale(1.05) !important;
+    opacity: 1 !important;
+    filter: saturate(100%) !important;
+}
+
+@keyframes scrollLogos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+    .logotype {
+        font-size: 1.8rem;
+        padding: 0 2rem;
+        -webkit-text-stroke: 0.6px #333;
+    }
+
+    .header-logo {
+        padding: 1.2rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .logotype {
+        font-size: 1.5rem;
+        padding: 0 1.5rem;
+        -webkit-text-stroke: 0.5px #333;
+    }
+
+    .header-logo {
+        padding: 1rem 0;
+        margin-bottom: 1.5rem;
+    }
+}
+
+
+
+
+
+
+@keyframes scrollLogos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FF0, 0 0 20px #FF0; }
+    to { text-shadow: 0 0 10px #FFF, 0 0 20px #FF0, 0 0 30px #FF0, 0 0 40px #FF0; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slide {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0) skewX(-10deg); }
+    100% { transform: translateX(10px) skewX(-10deg); }
+}
+
+@keyframes zoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+
+/* Эффекты при наведении */
+.logotype:hover {
+    animation-play-state: paused;
+    transform: scale(1.3) rotate(5deg) !important;
+    filter: brightness(1.5);
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .logotype {
+        font-size: 1.8rem !important;
+        padding: 0 1.2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .logotype {
+        font-size: 1.5rem !important;
+        padding: 0 1rem !important;
+    }
+
+    .header-logo {
+        padding: 0.8rem 0;
+    }
+}

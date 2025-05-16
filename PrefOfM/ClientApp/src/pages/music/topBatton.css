@@ -1,0 +1,164 @@
+﻿.tabs:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 #000000;
+}
+
+.tab {
+    background: none;
+    border: 2px solid transparent;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    text-align: left;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    box-shadow: none;
+    overflow: hidden !important;
+    max-width: 1vw !important;
+}
+
+.tab:hover {
+    transform: translate(-2px, -2px);
+    outline: 1rem black;
+    border: 2px solid #000000;
+    box-shadow: 3px 3px 0 #000000;
+    background-color: #f0f0f0;
+}
+
+.tab.active {
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #000000;
+    box-shadow: 3px 3px 0 #000000;
+    transform: translate(-1px, -1px);
+}
+
+.tab:nth-child(1).active {
+    background-color: #FF6B6B;
+    border-color: #FF6B6B;
+}
+
+.tab:nth-child(2).active {
+    background-color: #4ECDC4;
+    border-color: #4ECDC4;
+}
+
+.tab:nth-child(3).active {
+    background-color: #FFD166;
+    border-color: #FFD166;
+}
+
+.songs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.song-card:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 8px 8px 0 #000000;
+    border: 3px solid #000000;
+}
+
+.song-cover {
+    width: 100%;
+    aspect-ratio: 1;
+    background: #f0f0f0;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    background-size: cover;
+    border: 1px solid #e0e0e0;
+}
+
+.song-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #000000;
+}
+
+.song-info p {
+    color: #666666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.mood-badge {
+    display: inline-block;
+    background: #1DB954;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.play-button {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background: #000000;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+}
+
+.song-card:hover .play-button {
+    opacity: 1;
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: #666666;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .home-page {
+        flex-direction: row;
+    }
+
+    .tabs {
+        width: auto;
+        /*position: static;*/
+        margin-top: 3rem;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 0.8rem;
+    }
+
+    .tab {
+        white-space: nowrap;
+    }
+
+    .tabs:hover {
+        transform: none;
+        box-shadow: 4px 4px 0 #000000;
+    }
+
+    .tab:hover {
+        transform: none;
+        box-shadow: none;
+        border: 2px solid transparent;
+    }
+}

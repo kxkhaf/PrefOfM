@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Registration Confirmation</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .email-container {
+            max-width: 450px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .email-card {
+            border: 3px solid #000000;
+            padding: 2.5rem;
+            box-shadow: 10px 10px 0 #000000;
+            background-color: #ffffff;
+        }
+        .email-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .email-header h1 {
+            color: #000000;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.5px;
+        }
+        .divider {
+            height: 3px;
+            background-color: #000000;
+            width: 80px;
+            margin: 0 auto;
+        }
+        .email-button {
+            display: inline-block;
+            padding: 1.2rem;
+            background-color: #000000;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            margin: 1.5rem 0;
+            border: none;
+            cursor: pointer;
+        }
+        .email-button:hover {
+            background-color: #333333;
+        }
+        .email-footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666666;
+        }
+        .code-block {
+            background-color: #f8f8f8;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            margin: 1rem 0;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+<div class="email-container">
+    <div class="email-card">
+        <div class="email-header">
+            <h1>Email Confirmation</h1>
+            <div class="divider"></div>
+        </div>
+
+        <p>To complete your registration, click the button:</p>
+
+        <a href="{confirmUrl}" class="email-button">Confirm Email</a>
+
+        <p>Or copy this link to your browser:</p>
+        <div class="code-block">{confirmUrl}</div>
+
+        <p>This link is valid for 24 hours.</p>
+
+        <div class="email-footer">
+            <p>If you didn't register, please ignore this email.</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

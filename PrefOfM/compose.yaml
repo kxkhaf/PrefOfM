@@ -1,0 +1,115 @@
+﻿volumes:
+  certs:
+    driver: local
+  pgdata:
+  redisdata:
+
+services:
+  nginx:
+    image: clientapp
+    build:
+      context: ClientApp
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+      - "8443:8443"
+      - "443:443"
+    depends_on:
+      - authservice
+      - emailservice
+      - musicservice
+    networks:
+      - backend
+
+  authservice:
+    image: authservice
+    build:
+      context: AuthService
+      dockerfile: AuthService/Dockerfile
+    ports:
+      - "5404:5404"
+      - "7404:7404"
+    environment:
+      - ASPNETCORE_URLS=http://+:5404;https://+:7404
+    env_file:
+      - .env
+    depends_on:
+      - pg
+      - redis
+      - emailservice
+    networks:
+      - backend
+
+  emailservice:
+    image: emailservice
+    build:
+      context: EmailService
+      dockerfile: EmailService/Dockerfile
+    ports:
+      - "5010:5010"
+      - "7010:7010"
+    environment:
+      - ASPNETCORE_URLS=http://+:5010;https://+:7010
+    env_file:
+      - .env
+    depends_on:
+      - pg
+      - redis
+    networks:
+      - backend
+
+  musicservice:
+    image: musicservice
+    build:
+      context: MusicService
+      dockerfile: MusicService/Dockerfile
+    ports:
+      - "5000:5000"
+      - "7000:7000"
+    environment:
+      - ASPNETCORE_URLS=http://+:5000;https://+:7000
+    env_file:
+      - .env
+    depends_on:
+      - pg
+      - redis
+      - authservice
+    networks:
+      - backend
+
+  pg:
+    container_name: pg
+    image: postgres
+    environment:
+      POSTGRES_DB: prefofm
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5432:5432"
+    networks:
+      - backend
+
+  pgadm:
+    container_name: admin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@prefofm.mus
+      PGADMIN_DEFAULT_PASSWORD: 1234
+    ports:
+      - "1234:80"
+    networks:
+      - backend
+
+  redis:
+    container_name: rds
+    image: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - backend
+
+
+networks:
+  backend:
+    driver: bridge
+

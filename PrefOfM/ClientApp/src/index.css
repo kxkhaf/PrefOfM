@@ -1,0 +1,1151 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[data-lift], a, button,
+.logo, .header, .content {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transform: translate(0, 0);
+  box-shadow: none;
+  position: relative;
+}
+
+[data-lift]:hover, button:hover,
+.logo:hover, .header:hover, .content:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.logo:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Усиленный эффект для карточек и специальных элементов */
+[data-lift="2"]:hover,
+.card:hover, .tabs:hover, .song-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для логотипа */
+.logo {
+  display: inline-block;
+  padding: 0.5em;
+  border-radius: 8px;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+
+/* Стили для шапки */
+.header {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+  z-index: 20000 !important;
+}
+
+/* Стили для контентного блока */
+.content {
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+  display: inline-block;
+}
+a:hover {
+  color: #535bf2;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.25s;
+  position: relative;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Адаптация для светлой темы */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+    border-color: #e0e0e0;
+  }
+  button:hover {
+    border-color: #747bff;
+  }
+
+  .header, .content {
+    background-color: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+  [data-lift]:hover, a:hover, button:hover,
+  .logo:hover, .header:hover, .content:hover,
+  .card:hover, .tabs:hover, .song-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  button:active {
+    transform: translate(0, -3px) !important; /* Поднимаем кнопку вверх */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2) !important; /* Усиливаем тень */
+    filter: brightness(1.05); /* Легкое свечение */
+    transition: all 0.1s ease-out; /* Ускоряем анимацию нажатия */
+  }
+}
+
+/* Дополнительные стили для кнопок с акцентом */
+.button-primary {
+  background-color: #646cff;
+  color: white;
+}
+.button-primary:hover {
+  background-color: #535bf2;
+  transform: translate(-3px, -3px);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+.emotions-btn {
+  min-width: 100px;
+  position: relative;
+  border-radius: 12px;
+  padding: 0.8em 1.5em;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Анимация бегающего огонька */
+.emotions-btn::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  background: linear-gradient(
+          45deg,
+          #ff0000, #ff7300, #fffb00, #48ff00,
+          #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000
+  );
+  background-size: 400%;
+  border-radius: 14px;
+  opacity: 0;
+  transition: 0.5s;
+  animation: animateGlow 20s linear infinite;
+}
+
+@keyframes animateGlow {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Эффекты при наведении */
+.emotions-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.emotions-btn:hover::before {
+  opacity: 1;
+}
+
+.emotions-btn:active {
+  transform: translate(0, 1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.emotions-btn:active::before {
+  opacity: 0.8;
+}
+
+.emotions-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  border-radius: 12px;
+  opacity: 0;
+  transition: transform 0.8s, opacity 0.8s;
+  z-index: -1;
+}
+
+  /* Общие стили для поднимающихся элементов */
+  [data-lift], a, button,
+  .logo, .header, .content {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform: translate(0, 0);
+    box-shadow: none;
+    position: relative;
+  }
+
+
+
+  /* Усиленный эффект для карточек и специальных элементов */
+  [data-lift="2"]:hover,
+  .card:hover, .tabs:hover, .song-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  /* Стили для логотипа */
+  .logo {
+    display: inline-block;
+    padding: 0.5em;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid transparent;
+  }
+
+  /* Стили для шапки */
+  .header {
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
+  }
+
+  /* Стили для контентного блока */
+  .content {
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+    display: inline-block;
+  }
+  a:hover {
+    color: #535bf2;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+  }
+
+  button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.25s;
+    position: relative;
+  }
+  button:hover {
+    border-color: #646cff;
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
+  /* Адаптация для светлой темы */
+  @media (prefers-color-scheme: light) {
+    :root {
+      color: #213547;
+      background-color: #ffffff;
+    }
+    a:hover {
+      color: #747bff;
+    }
+    button {
+      background-color: #f9f9f9;
+      border-color: #e0e0e0;
+    }
+    button:hover {
+      border-color: #747bff;
+    }
+
+    .header, .content {
+      background-color: rgba(0, 0, 0, 0.03);
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  /* Медиа-запросы для мобильных устройств */
+  @media (max-width: 768px) {
+    [data-lift]:hover, button:hover,
+    .logo:hover, .header:hover, .content:hover,
+    .card:hover, .tabs:hover, .song-card:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    button:active {
+      transform: translate(0, 2px) !important;
+    }
+  }
+
+  /* Дополнительные стили для кнопок с акцентом */
+  .button-primary {
+    background-color: #646cff;
+    color: white;
+  }
+  .button-primary:hover {
+    background-color: #535bf2;
+    transform: translate(-3px, -3px);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  /* Стили для кнопки эмоций с замедленной анимацией */
+  .emotions-btn {
+    position: relative;
+    border-radius: 12px;
+    padding: 0.8em 1.5em;
+    font-weight: 600;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  /* Контур с замедленной анимацией */
+  .emotions-btn::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    background: linear-gradient(
+            45deg,
+            #ff0000, #ff7300, #fffb00, #48ff00,
+            #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000
+    );
+    background-size: 400%;
+    border-radius: 14px;
+    opacity: 0;
+    transition: opacity 0.8s; /* Более плавное появление */
+    animation: animateGlow 40s linear infinite; /* В 2 раза медленнее */
+  }
+
+  @keyframes animateGlow {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+
+  /* Эффекты при наведении */
+  .emotions-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .emotions-btn:hover::before {
+    opacity: 1;
+  }
+
+  /* Эффект при нажатии */
+  .emotions-btn:active {
+    transform: translate(0, 1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .emotions-btn:active::before {
+    animation-duration: 20s; /* Замедление при нажатии */
+  }
+
+  .emotions-btn:hover::after {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  /* Анимация текста */
+  .emotions-btn span {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.5s ease; /* Более плавная анимация текста */
+  }
+
+  .emotions-btn:hover span {
+    transform: scale(1.05);
+  }
+
+  /* Для светлой темы */
+  @media (prefers-color-scheme: light) {
+    .emotions-btn {
+      box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+    }
+
+    .emotions-btn::before {
+      animation: animateGlow 30s linear infinite; /* Замедление для светлой темы */
+    }
+  }
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(0);
+  border-radius: 12px;
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+  z-index: -1;
+}
+
+.emotions-btn:hover::after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Анимация текста */
+.emotions-btn span {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.emotions-btn:hover span {
+  transform: scale(1.05);
+}
+
+/* Для светлой темы */
+@media (prefers-color-scheme: light) {
+  .emotions-btn {
+    box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+  }
+
+  .emotions-btn::before {
+    animation: animateGlow 15s linear infinite;
+  }
+}
+
+.header {
+  background-color: #ffffff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border: 2px solid #000000;
+  box-shadow: 4px 4px 0 #000000;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  font-size: 2rem !important;
+  font-weight: bold;
+  color: #e2fd00 !important;
+  outline: 10px black !important;
+  -webkit-text-stroke: 0.8px black;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.emotions-container {
+  position: relative;
+}
+
+.nav-button {
+  background: none;
+  border: 2px solid #000000;
+  color: #000000;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 20px;
+}
+
+.emotions-btn {
+  background-color: #ffffff;
+}
+
+.emotions-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.fast-start {
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.fast-start:hover {
+  background-color: #333333;
+  transform: scale(1.03);
+}
+
+.emotions-panel {
+  position: absolute;
+  top: 100%;       /* Позиционирование под кнопкой */
+  right: 0;        /* Выравнивание по правому краю кнопки */
+  width: 150px;
+  left: 0;
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 10;
+  min-width: 120px;
+  box-shadow: 4px 4px 0 #000000;
+}
+
+.emotion-option {
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  color: #000000;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.emotion-option:hover {
+  background-color: #f0f0f0;
+}
+
+.emotion-option.selected {
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.content {
+  flex: 1;
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 2px solid #000000;
+  box-shadow: 4px 4px 0 #000000;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .main-layout {
+    max-width: 90%;
+    padding: 10px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.8rem;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+}
+/* HomePage.css */
+
+.tab {
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  z-index: 1;
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Стили при наведении на обычную кнопку */
+.tab:hover {
+  transform: translateY(-4px); /* Поднимаем выше, чем другие элементы */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  background-color: #f0f0f0;
+}
+
+/* Стили для активной кнопки */
+.tab.active {
+  background-color: #000;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Активная кнопка при наведении - поднимаем еще выше */
+.tab.active:hover {
+  outline: #1A1A1A solid 2px;
+  transform: translateY(-6px); /* Максимальный подъем */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  z-index: 2; /* Чтобы была поверх других элементов */
+}
+
+.tab:nth-child(1).active { background-color: #FF6B6B; } /* Playlists */
+.tab:nth-child(2).active { background-color: #4ECDC4; } /* Favourite */
+.tab:nth-child(3).active { background-color: #FFD166; } /* Last 5 */
+
+/* Эффект нажатия */
+.tab:active {
+  transform: translateY(-2px) !important;
+  transition: all 0.1s ease-out;
+}
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 94vh;
+  min-width: 97%;
+  background-color: #f8f8f8;
+  color: #000000;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background-color: #ffffff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border: 2px solid #000000;
+  box-shadow: 4px 4px 0 #000000;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.emotions-container {
+  position: relative;
+}
+
+.nav-button {
+  background: none;
+  border: 2px solid #000000;
+  color: #000000;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 20px;
+}
+
+.emotions-btn {
+  background-color: #ffffff;
+}
+
+.emotions-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.fast-start {
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.fast-start:hover {
+  background-color: #333333;
+  transform: scale(1.03);
+}
+
+.emotions-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 10;
+  min-width: 120px;
+  box-shadow: 4px 4px 0 #000000;
+}
+
+.emotions-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 10;
+  width: 150px; /* Фиксированная ширина */
+  box-shadow: 4px 4px 0 #000000;
+  box-sizing: border-box;
+
+  /* Анимационные свойства */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  will-change: transform;
+  transform-origin: top center;
+}
+
+.emotion-option {
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  color: #000000;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.emotion-option:hover {
+  background-color: #f0f0f0;
+}
+
+.emotion-option.selected {
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.content {
+  flex: 1;
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 2px solid #000000;
+  box-shadow: 4px 4px 0 #000000;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .main-layout {
+    max-width: 90%;
+    padding: 10px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.8rem;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+}
+
+.emotions-container {
+  position: relative;
+  display: inline-block;
+}
+
+.emotions-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 10;
+  width: 150px; /* Фиксированная ширина */
+  box-shadow: 4px 4px 0 #000000;
+  box-sizing: border-box;
+
+  /* Анимационные свойства */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  will-change: transform;
+  transform-origin: top center;
+}
+
+
+.emotions-container:hover .emotions-panel {
+  /* Состояние при наведении */
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Стили для кнопки эмоций */
+.emotions-btn {
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.emotions-btn:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+/* Search styles */
+.search-container {
+  flex: 1;
+  flex-direction: row;
+  display: flex;
+  max-width: 500px;
+  margin: 0 2rem;
+}
+
+.search-form {
+  display: flex;
+  position: relative;
+  width: 100%;
+  transition: all 0.2s ease;
+  border-radius: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  padding-right: 3rem;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 1; /* Чтобы инпут был выше тени */
+}
+
+/* Тень для всей формы */
+.search-form::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #000000;
+  border-radius: 18px; /* Чуть меньше, чем у инпута */
+  z-index: 0;
+  transition: all 0.2s ease;
+}
+
+.search-form:hover {
+  transform: translate(-2px, -2px);
+}
+
+.search-form:hover::after {
+  transform: translate(2px, 2px);
+}
+
+.search-form:active,
+.search-form:focus-within {
+  transform: translate(-4px, -4px);
+}
+
+.search-form:active::after,
+.search-form:focus-within::after {
+  transform: translate(4px, 4px);
+}
+
+.search-button {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #000000;
+  border: 2px solid #000000;
+  cursor: pointer;
+  padding: 0.5rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 2; /* Чтобы кнопка была выше всего */
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+}
+
+.search-button:hover {
+  transform: translateY(-50%) translate(-1px, -1px);
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+}
+
+.search-button:active {
+  transform: translateY(-50%) translate(1px, 1px);
+  box-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+}
+
+.search-button svg {
+  stroke: #ffffff;
+}
+
+/* Mobile styles for search */
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .search-container {
+    order: 3;
+    width: 100%;
+    margin: 1rem 0 0 0;
+  }
+
+  .search-form:hover,
+  .search-form:active,
+  .search-form:focus-within {
+    transform: none;
+  }
+
+  .search-form:hover::after,
+  .search-form:active::after,
+  .search-form:focus-within::after {
+    transform: none;
+  }
+}
+
+
+
+.scroll-top-button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #000000;
+  box-shadow: 1px 1px 0 #000000;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.scroll-top-button::before {
+  content: "⇧";
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #000000;
+  -webkit-text-stroke: 0.5px #000000; /* Утолщаем контур */
+  text-shadow: none;
+}
+.scroll-top-button::after {
+  content: "";
+  position: absolute;
+  font-size: 1.6rem;
+  top: -7px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.05) 100%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-top-button:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 2px 2px 0 #000000;
+  background-color: #f8f8f8;
+}
+
+.scroll-top-button:hover::before {
+  transform: translateY(-2px);
+}
+
+.scroll-top-button:hover::after {
+  opacity: 1;
+}
+
+.scroll-top-button:active {
+  transform: translate(0, 0);
+  box-shadow: 2px 2px 0 #000000;
+  background-color: #f0f0f0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-top-button {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.scroll-top-button {
+  will-change: transform, box-shadow;
+}
+
+@media (max-width: 768px) {
+  .scroll-top-button {
+    width: 42px;
+    height: 42px;
+    margin-left: 0.3rem;
+  }
+
+  .scroll-top-button::before {
+    font-size: 1.2rem;
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.scroll-top-button.show {
+  animation: fadeInUp 0.4s ease-out, pulse 0.6s ease 0.4s;
+}

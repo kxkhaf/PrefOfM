@@ -1,0 +1,226 @@
+﻿.layout-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000000;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo-link {
+    text-decoration: none;
+    box-shadow: none !important;
+    color: inherit;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.logo-icon {
+    color: #1fca5b;
+}
+
+.logo-text {
+    background: linear-gradient(90deg, #1fca5b, #1eea67);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.user-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    background: #282828;
+    transition: all 0.3s ease;
+}
+
+.user-menu:hover {
+    background: #383838;
+}
+
+.username {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: #282828;
+    border-radius: 8px;
+    padding: 0.5rem;
+    min-width: 200px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    margin-top: 0.5rem;
+}
+
+.user-menu:hover .user-dropdown {
+    display: block;
+}
+
+.user-dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.user-dropdown a:hover {
+    background: #383838;
+}
+
+.content-wrapper {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 240px;
+    background: #000000;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #282828;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    color: #b3b3b3;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+    color: #ffffff;
+    background: #282828;
+}
+
+.sidebar-icon {
+    font-size: 1.4rem;
+}
+
+.mood-detection-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    margin-top: auto;
+    background: #1DB954;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mood-detection-btn:hover {
+    background: #1ED760;
+    transform: translateY(-2px);
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    background: linear-gradient(180deg, #1A1A1A 0%, #121212 100%);
+}
+
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 80px;
+        padding: 1rem 0.5rem;
+    }
+
+    .sidebar-link span,
+    .mood-detection-btn span {
+        display: none;
+    }
+
+    .sidebar-link {
+        justify-content: center;
+        padding: 0.75rem 0;
+    }
+
+    .mood-detection-btn {
+        justify-content: center;
+        padding: 0.75rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        padding: 0.5rem;
+        overflow-x: auto;
+        border-right: none;
+        border-bottom: 1px solid #282828;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        margin-bottom: 0;
+        margin-right: 1rem;
+    }
+
+    .sidebar-link {
+        padding: 0.5rem 1rem;
+    }
+
+    .mood-detection-btn {
+        margin-top: 0;
+        margin-left: auto;
+        white-space: nowrap;
+    }
+
+    .main-content {
+        padding: 1.5rem;
+    }
+}

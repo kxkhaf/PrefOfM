@@ -1,0 +1,5 @@
+﻿.tabs.hidden {
+    transform: translateY(-100%);
+    margin-top: 220px !important;
+    margin-bottom: -220px !important;
+}
